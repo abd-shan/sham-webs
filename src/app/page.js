@@ -162,7 +162,6 @@ export default function ComingSoonPage() {
                         <div className="input-wrapper">
                           <input
                               type="email"
-                              required
                               placeholder="بريدك الإلكتروني"
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
