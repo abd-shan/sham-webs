@@ -80,7 +80,7 @@ body {
   }
 }
 
-/* تصميم متجاوب */
+
 @media (max-width: 768px) {
   .countdown-item {
     padding: 16px 8px;
@@ -95,7 +95,7 @@ body {
   }
 }
 
-/* أنماط إضافية للرابط الاجتماعي */
+
 .social-link {
   display: flex;
   align-items: center;
@@ -125,14 +125,14 @@ body {
 
 
 .subscription-form {
-  max-width: 1000px;
-  margin:25px auto;
+  max-width: 90vw;
   width: 100%;
+  margin: 25px auto;
+  padding: 30px;
+  border-radius: 20px;
   background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
   backdrop-filter: blur(12px);
-  border-radius: 20px;
   border: 1px solid rgba(180, 83, 9, 0.2);
-  padding: 30px;
   box-shadow:
           0 10px 30px rgba(0, 0, 0, 0.3),
           inset 0 0 15px rgba(251, 191, 36, 0.1);
@@ -181,9 +181,16 @@ body {
   flex-direction: column;
   gap: 25px;
 }
+*{
+  box-sizing: border-box;
+}
+
 
 .form-group {
   position: relative;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .form-label {

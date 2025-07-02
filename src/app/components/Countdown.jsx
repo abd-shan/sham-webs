@@ -9,7 +9,7 @@ export default function Countdown({ timeLeft }) {
     };
 
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-16">
+        <div className=" grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-16">
             {Object.entries(timeLeft).map(([unit, value]) => (
                 <motion.div
                     key={unit}

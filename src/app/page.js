@@ -146,112 +146,113 @@ export default function ComingSoonPage() {
                     كن أول من يعلم عند الإطلاق!
                   </h2>
                 </div>
+                <div className={"w-90 max-w-90"}>
+                    <form onSubmit={handleSubmit} className="form-body">
 
-                <form onSubmit={handleSubmit} className="form-body">
+                      <motion.div
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.2 }}
+                          className="form-group"
+                      >
+                        <label className="form-label">
+                          <FiMail className="label-icon" />
+                          البريد الإلكتروني
+                        </label>
+                        <div className="input-wrapper">
+                          <input
+                              type="email"
+                              required
+                              placeholder="بريدك الإلكتروني"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                              disabled={isSubmitting}
+                          />
+                          <FiMail className="input-icon" />
+                        </div>
+                      </motion.div>
 
-                  <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
-                      className="form-group"
-                  >
-                    <label className="form-label">
-                      <FiMail className="label-icon" />
-                      البريد الإلكتروني
-                    </label>
-                    <div className="input-wrapper">
-                      <input
-                          type="email"
-                          required
-                          placeholder="بريدك الإلكتروني"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          disabled={isSubmitting}
-                      />
-                      <FiMail className="input-icon" />
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                      className="form-group"
-                  >
-                    <label className="form-label">
-                      <FiPhone className="label-icon" />
-                      رقم الهاتف
-                    </label>
-                    <div className="input-wrapper">
-                      <input
-                          style={{direction:"rtl"}}
-                          type="tel"
-                          required
-                          placeholder="رقم هاتفك"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          disabled={isSubmitting}
-                      />
-                      <FiPhone className="input-icon" />
-                    </div>
-                  </motion.div>
+                      <motion.div
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.3 }}
+                          className="form-group"
+                      >
+                        <label className="form-label">
+                          <FiPhone className="label-icon" />
+                          رقم الهاتف
+                        </label>
+                        <div className="input-wrapper">
+                          <input
+                              style={{direction:"rtl"}}
+                              type="tel"
+                              required
+                              placeholder="رقم هاتفك"
+                              value={phone}
+                              onChange={(e) => setPhone(e.target.value)}
+                              disabled={isSubmitting}
+                          />
+                          <FiPhone className="input-icon" />
+                        </div>
+                      </motion.div>
 
 
-                  <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                      className="form-submit"
-                  >
-                    <button
-                        type="submit"
-                        className="submit-btn"
-                        disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                          <>
-                            <svg className="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                              <circle className="spinner-circle" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                              <path className="spinner-path" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            جاري الإرسال...
-                          </>
-                      ) : (
-                          <>
-                            <FiPlus className="submit-icon" />
-                            إشعارني عند الإطلاق
-                          </>
-                      )}
-                    </button>
-                  </motion.div>
-
-                  {/* رسائل الحالة */}
-                  <AnimatePresence>
-                    {isSubmitted && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="form-message success-message"
+                      <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4 }}
+                          className="form-submit"
+                      >
+                        <button
+                            type="submit"
+                            className="submit-btn"
+                            disabled={isSubmitting}
                         >
-                          <FiCheck className="message-icon" />
-                          <span>تم التسجيل بنجاح! سنخبرك عند الإطلاق</span>
-                        </motion.div>
-                    )}
+                          {isSubmitting ? (
+                              <>
+                                <svg className="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                  <circle className="spinner-circle" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                  <path className="spinner-path" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                جاري الإرسال...
+                              </>
+                          ) : (
+                              <>
+                                <FiPlus className="submit-icon" />
+                                إشعارني عند الإطلاق
+                              </>
+                          )}
+                        </button>
+                      </motion.div>
 
-                    {error && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="form-message error-message"
-                        >
-                          <FiX className="message-icon" />
-                          <span>{error}</span>
-                        </motion.div>
-                    )}
-                  </AnimatePresence>
-                </form>
+                      {/* رسائل الحالة */}
+                      <AnimatePresence>
+                        {isSubmitted && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="form-message success-message"
+                            >
+                              <FiCheck className="message-icon" />
+                              <span>تم التسجيل بنجاح! سنخبرك عند الإطلاق</span>
+                            </motion.div>
+                        )}
+
+                        {error && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="form-message error-message"
+                            >
+                              <FiX className="message-icon" />
+                              <span>{error}</span>
+                            </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </form>
+                </div>
 
                 <div className="form-footer">
                   <p className="privacy-text">

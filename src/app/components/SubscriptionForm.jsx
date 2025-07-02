@@ -40,7 +40,7 @@ export default function SubscriptionForm() {
 
 
     return (
-        <div className="w-full">
+        <div className="container card">
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
 
