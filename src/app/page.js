@@ -149,27 +149,6 @@ export default function ComingSoonPage() {
                 <div className={"w-90 max-w-90"}>
                     <form onSubmit={handleSubmit} className="form-body">
 
-                      <motion.div
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.2 }}
-                          className="form-group"
-                      >
-                        <label className="form-label">
-                          <FiMail className="label-icon" />
-                          البريد الإلكتروني
-                        </label>
-                        <div className="input-wrapper">
-                          <input
-                              type="email"
-                              placeholder="بريدك الإلكتروني"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                              disabled={isSubmitting}
-                          />
-                          <FiMail className="input-icon" />
-                        </div>
-                      </motion.div>
 
                       <motion.div
                           initial={{ opacity: 0, x: -20 }}
@@ -195,6 +174,27 @@ export default function ComingSoonPage() {
                         </div>
                       </motion.div>
 
+                      <motion.div
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.2 }}
+                          className="form-group"
+                      >
+                        <label className="form-label">
+                          <FiMail className="label-icon" />
+                           البريد الإلكتروني (اختياري)
+                        </label>
+                        <div className="input-wrapper">
+                          <input
+                              type="email"
+                              placeholder="بريدك الإلكتروني"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                              disabled={isSubmitting}
+                          />
+                          <FiMail className="input-icon" />
+                        </div>
+                      </motion.div>
 
                       <motion.div
                           initial={{ opacity: 0, y: 20 }}
@@ -218,7 +218,7 @@ export default function ComingSoonPage() {
                           ) : (
                               <>
                                 <FiPlus className="submit-icon" />
-                                إشعارني عند الإطلاق
+                                إشعار عند الإطلاق
                               </>
                           )}
                         </button>
